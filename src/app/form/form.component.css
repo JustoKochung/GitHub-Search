@@ -1,0 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.css"
+
+.placeholder {
+  text-justify: inter-cluster;
+}

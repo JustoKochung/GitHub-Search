@@ -20,10 +20,12 @@
     <div class="col-md-6">
       <div *ngFor="let repo of repos" class="card">
         <div class="card-header">
-          <p>
-            {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-lg btn-dark float-right">View
-              project on github</a>
-          </p>
+          <div class="div">
+            <h6>Repo Name: <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></h6>
+          </div>
+          <div class="div">
+            <h6>Repo Link: <a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></h6>
+          </div>
         </div>
         <div class="card-body">
           <a href="{{repo.description}}"></a>
