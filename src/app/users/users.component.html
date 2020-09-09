@@ -1,0 +1,60 @@
+<div *ngIf="profile">
+  <div class="card-body ">
+    <div class="row border-top border-right border-left bio">
+      <div class="col-sm-2 my-auto border-right">
+        <img id="avatar" src="{{ profile.avatar_url }}" class="img-responsive mx-auto d-block" alt="Profile Image">
+      </div>
+      <div class="col-sm-4 border-right">
+        <div>
+          <div class="">
+            <div class="card-header lead font-weight-bold">
+              {{profile.name}} <small>({{profile.login}})</small>
+              <span *ngIf="profile.company">, Works at {{profile.company}}</span>
+              {{profile.location}}
+            </div>
+
+            <div class="card-body">
+              <h4 class="mr-2">
+                <span class="badge badge-secondary mr-2">{{profile.followers}} Followers</span>
+                <span class="badge badge-secondary mr-2">Following {{profile.following}}</span>
+                <span class="badge badge-info">{{profile.public_repos}} Public Repos</span>
+              </h4>
+            </div>
+          </div>
+          <div class="card-body" id="profileUrl">
+            <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success btn-lg">View profile on
+                github</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-body col-sm-6">
+        <ul class="list-group">
+          <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+          <li class="list-group-item text-info" *ngIf="profile.hireable">Available for hire</li>
+          <li class="list-group-item" *ngIf="profile.blog">Websites: <a href="{{profile.blog}}"
+              target="_blank">{{profile.blog}}</a></li>
+          <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row pt-3 border rounded">
+      <div class="container-fluid repos mh-100">
+        <div class="card-header border-bottom">
+          <h3 class="card-title text-center">Repos</h3>
+        </div>
+
+        <div class="card-body" *ngFor="let repo of repos">
+          <p class="clearfix">
+            {{repo.name}} <a href="{{repo.html_url}}" target="_blank" class="btn btn-lg btn-dark float-right">View
+              project on github</a>
+          </p>
+          <p class="text-info border-bottom">{{repo.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

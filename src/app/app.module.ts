@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
 import { FormComponent } from './form/form.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
-    FormComponent
+    FormComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
