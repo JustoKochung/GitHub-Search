@@ -1,17 +1,9 @@
-<div class="card">
-  <div class="card-header">
-    <h4>Search</h4>
-  </div>
-  <div class="card-body">
+<div class="container">
+  <div class="jumbotron">
+    <h4>Github Search</h4>
     <app-form (searchProfile)='searchProfile($event)'></app-form>
   </div>
-</div>
-
-<div class="card">
-  <div class="card-header">
-    <h4>Repos</h4>
-  </div>
-  <div class="card-body">
+  <div class="jumbotron">
     <app-users [profile]='profile' [repos]='repos'></app-users>
   </div>
 </div>
